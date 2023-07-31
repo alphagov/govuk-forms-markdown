@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "govuk/forms/markdown/renderer"
+require_relative "./../lib/govuk_forms_markdown"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

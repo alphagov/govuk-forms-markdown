@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-require_relative "lib/govuk/forms/markdown/renderer/version"
+require_relative "lib/govuk-forms-markdown/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "govuk-forms-markdown-renderer"
-  spec.version = Govuk::Forms::Markdown::Renderer::VERSION
+  spec.name = "govuk-forms-markdown"
+  spec.version = GovukFormsMarkdown::VERSION
   spec.authors = ["Alistair Laing"]
   spec.email = ["aliuk2012@users.noreply.github.com "]
 
   spec.summary = "Custom Markdown renderer for the GOV.UK Forms apps"
   spec.description = "This gem renders the limited subset of Markdown syntax supported by GOV.UK Forms."
-  spec.homepage = "https://github.com/alphagov/govuk-forms-markdown-renderer"
+  spec.homepage = "https://github.com/alphagov/govuk-forms-markdown"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
 
   spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/alphagov/govuk-forms-markdown-renderer"
-  spec.metadata["changelog_uri"] = "https://github.com/alphagov/govuk-forms-markdown-renderer/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/alphagov/govuk-forms-markdown"
+  spec.metadata["changelog_uri"] = "https://github.com/alphagov/govuk-forms-markdown/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
