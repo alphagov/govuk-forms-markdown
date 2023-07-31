@@ -17,3 +17,6 @@ inherit_mode:
 #
 # See https://github.com/alphagov/rubocop-govuk/blob/main/CONTRIBUTING.md
 # **************************************************************
+
+AllCops:
+  TargetRubyVersion: 3.0
