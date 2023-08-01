@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module GovukFormsMarkdown
-  class Renderer
+  class Renderer < ::Redcarpet::Render::Safe
     class Error < StandardError; end
     # Your code goes here...
 
