@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-RSpec.describe GovukFormsMarkdown::Renderer do
+# rubocop:disable RSpec/FilePath
+RSpec.describe GovukFormsMarkdown::Renderer, "#emphasis" do
   subject(:renderer) { described_class.new }
 
-  describe "#emphasis" do
-    it "does not format emphasis" do
-      expect(renderer.emphasis("important text")).to eq "important text"
-    end
+  it "does not format emphasis" do
+    expect(renderer.emphasis("important text")).to eq "important text"
   end
 end
+# rubocop:enable RSpec/FilePath
