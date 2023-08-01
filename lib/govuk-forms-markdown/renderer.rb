@@ -45,5 +45,10 @@ module GovukFormsMarkdown
     def triple_emphasis(text)
       text
     end
+
+    def link(link, title, content)
+      title_attribute = title.nil? ? "" : " title=\"#{title}\""
+      %(<a href="#{link}" class="govuk-link"#{title_attribute}>#{content}</a>)
+    end
   end
 end
