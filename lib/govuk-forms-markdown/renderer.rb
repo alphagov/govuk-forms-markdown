@@ -9,7 +9,7 @@ module GovukFormsMarkdown
       heading_size = case header_level
                      when 2 then "l"
                      when 3 then "m"
-                     else nil end
+                     end
 
       if heading_size.nil?
         paragraph(text)
@@ -18,7 +18,6 @@ module GovukFormsMarkdown
           <h#{header_level} class="govuk-heading-#{heading_size}">#{text}</h#{header_level}>
         HTML
       end
-
     end
 
     def paragraph(text)
