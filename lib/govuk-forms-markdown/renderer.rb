@@ -26,5 +26,24 @@ module GovukFormsMarkdown
       HTML
     end
 
+    def block_quote(quote)
+      paragraph(quote)
+    end
+
+    def hrule
+      nil
+    end
+
+    def emphasis(text)
+      text
+    end
+
+    def double_emphasis(text)
+      text
+    end
+
+    def triple_emphasis(text)
+      text
+    end
   end
 end
