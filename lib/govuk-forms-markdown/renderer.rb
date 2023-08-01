@@ -12,13 +12,19 @@ module GovukFormsMarkdown
                      else nil end
 
       if heading_size.nil?
-        text
+        paragraph(text)
       else
         <<~HTML
           <h#{header_level} class="govuk-heading-#{heading_size}">#{text}</h#{header_level}>
         HTML
       end
 
+    end
+
+    def paragraph(text)
+      <<~HTML
+        <p class="govuk-body">#{text}</p>
+      HTML
     end
 
   end
