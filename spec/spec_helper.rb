@@ -2,6 +2,14 @@
 
 require_relative "./../lib/govuk_forms_markdown"
 
+def render(content)
+  GovukFormsMarkdown.render(content)
+end
+
+def expect_equal_ignoring_ws(first, second)
+  expect(first.lines.map(&:strip).join("")).to eq(second.lines.map(&:strip).join(""))
+end
+
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
