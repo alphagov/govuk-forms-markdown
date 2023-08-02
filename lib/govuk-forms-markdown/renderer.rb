@@ -5,6 +5,10 @@ module GovukFormsMarkdown
     class Error < StandardError; end
     # Your code goes here...
 
+    def initialize(options = {})
+      super options
+    end
+
     def header(text, header_level)
       heading_size = case header_level
                      when 2 then "l"
