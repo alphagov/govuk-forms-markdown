@@ -2,6 +2,9 @@
 
 ## Released
 
+### [0.2.0] - 2023-08-015
+- All links should open in a new tab [#9](https://github.com/alphagov/govuk-forms-markdown/issues/9)
+
 ### [0.1.0] - 2023-08-03
 
 - Initial release

@@ -75,13 +75,13 @@ RSpec.describe GovukFormsMarkdown do
 
   it "renders a URL in angle brackets with GOV.UK classes" do
     expect(render("<https://www.gov.uk/help>")).to eq(
-      '<p class="govuk-body"><a href="https://www.gov.uk/help" class="govuk-link">https://www.gov.uk/help</a></p>',
+      '<p class="govuk-body"><a href="https://www.gov.uk/help" class="govuk-link" rel="noreferrer noopener" target="_blank">https://www.gov.uk/help</a></p>',
     )
   end
 
   it "renders an email address in angle brackets with GOV.UK classes" do
     expect(render("<noreply@gov.uk>")).to eq(
-      '<p class="govuk-body"><a href="mailto:noreply@gov.uk" class="govuk-link">noreply@gov.uk</a></p>',
+      '<p class="govuk-body"><a href="mailto:noreply@gov.uk" class="govuk-link" rel="noreferrer noopener" target="_blank">noreply@gov.uk</a></p>',
     )
   end
 

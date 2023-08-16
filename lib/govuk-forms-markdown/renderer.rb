@@ -52,7 +52,7 @@ module GovukFormsMarkdown
 
     def link(link, title, content)
       title_attribute = title.nil? ? "" : " title=\"#{title}\""
-      %(<a href="#{link}" class="govuk-link"#{title_attribute}>#{content}</a>)
+      %(<a href="#{link}" class="govuk-link"#{title_attribute} rel="noreferrer noopener" target="_blank">#{content}</a>)
     end
 
     def list(contents, list_type)
