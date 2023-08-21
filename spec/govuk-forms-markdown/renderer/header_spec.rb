@@ -17,7 +17,7 @@ RSpec.describe GovukFormsMarkdown::Renderer, "#header" do
     supported_heading_levels = [2, 3]
     supported_heading_levels.each do |level|
       it "does format heading level #{level}" do
-        heading_size = level == 2 ? "l" : "m"
+        heading_size = level == 2 ? "m" : "s"
         expect(renderer.header("Heading level #{level}", level).strip).to eq "<h#{level} class=\"govuk-heading-#{heading_size}\">Heading level #{level}</h#{level}>"
       end
     end

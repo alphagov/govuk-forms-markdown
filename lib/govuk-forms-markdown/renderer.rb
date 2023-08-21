@@ -11,8 +11,8 @@ module GovukFormsMarkdown
 
     def header(text, header_level)
       heading_size = case header_level
-                     when 2 then "l"
-                     when 3 then "m"
+                     when 2 then "m"
+                     when 3 then "s"
                      end
 
       if heading_size.nil?
