@@ -29,11 +29,11 @@ RSpec.describe GovukFormsMarkdown do
   end
 
   it "renders H2s and GOV.UK classes" do
-    expect(render("## Top heading")).to eq('<h2 class="govuk-heading-l">Top heading</h2>')
+    expect(render("## Top heading")).to eq('<h2 class="govuk-heading-m">Top heading</h2>')
   end
 
   it "renders H3s with ids and GOV.UK classes" do
-    expect(render("### A heading")).to eq('<h3 class="govuk-heading-m">A heading</h3>')
+    expect(render("### A heading")).to eq('<h3 class="govuk-heading-s">A heading</h3>')
   end
 
   it "renders paragraphs with GOV.UK classes" do
@@ -91,7 +91,7 @@ RSpec.describe GovukFormsMarkdown do
 
   context "when unsafe content is used it should be escaped" do
     it "renders escaped H2s and GOV.UK classes" do
-      expect(render("## <script>alert('Hacked');</script>")).to eq('<h2 class="govuk-heading-l">&lt;script&gt;alert(&#39;Hacked&#39;);&lt;/script&gt;</h2>')
+      expect(render("## <script>alert('Hacked');</script>")).to eq('<h2 class="govuk-heading-m">&lt;script&gt;alert(&#39;Hacked&#39;);&lt;/script&gt;</h2>')
     end
 
     it "renders escaped p and GOV.UK classes" do
