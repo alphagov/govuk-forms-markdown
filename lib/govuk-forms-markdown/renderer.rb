@@ -42,14 +42,17 @@ module GovukFormsMarkdown
     end
 
     def emphasis(text)
+      add_to_error(:used_emphasis)
       text
     end
 
     def double_emphasis(text)
+      add_to_error(:used_emphasis)
       text
     end
 
     def triple_emphasis(text)
+      add_to_error(:used_emphasis)
       text
     end
 
