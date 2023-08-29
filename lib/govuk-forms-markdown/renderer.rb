@@ -3,10 +3,12 @@
 module GovukFormsMarkdown
   class Renderer < ::Redcarpet::Render::Safe
     class Error < StandardError; end
-    # Your code goes here...
+
+    attr_reader :errors
 
     def initialize(options = {})
       super options
+      @errors = []
     end
 
     def header(text, header_level)
@@ -16,6 +18,7 @@ module GovukFormsMarkdown
                      end
 
       if heading_size.nil?
+        add_to_error(:heading_levels)
         paragraph(text)
       else
         <<~HTML
@@ -71,6 +74,13 @@ module GovukFormsMarkdown
       else
         raise GovukFormsMarkdown::Error, "Unexpected type #{list_type.inspect}"
       end
+    end
+
+  private
+
+    def add_to_error(error)
+      symbolized_error = error.to_sym
+      errors << symbolized_error unless errors.include?(symbolized_error)
     end
   end
 end
