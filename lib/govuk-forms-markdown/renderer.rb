@@ -34,6 +34,7 @@ module GovukFormsMarkdown
     end
 
     def block_quote(quote)
+      add_to_error(:used_block_quote)
       paragraph(quote)
     end
 
