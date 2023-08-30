@@ -6,6 +6,10 @@ def render(content)
   GovukFormsMarkdown.render(content)
 end
 
+def validate(content)
+  GovukFormsMarkdown.validate(content)
+end
+
 def expect_equal_ignoring_ws(first, second)
   expect(first.lines.map(&:strip).join("")).to eq(second.lines.map(&:strip).join(""))
 end
