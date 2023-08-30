@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### [0.3.0] - xxxx-xx-xx
+
+- Add a Validator check if markdown is not too long or using unsupported markdown syntax [#13](https://github.com/alphagov/govuk-forms-markdown/pull/13) 
+
 ## Released
 
 ### [0.2.1] - 2023-08-21
