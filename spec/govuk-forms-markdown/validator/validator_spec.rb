@@ -2,7 +2,7 @@
 
 # rubocop:disable RSpec/FilePath
 RSpec.describe GovukFormsMarkdown::Validator do
-  subject(:validator) { described_class.new(markdown) }
+  let(:validator) { described_class.new(markdown) }
 
   describe "#validate_length" do
     context "when markdown is empty string" do
@@ -82,6 +82,32 @@ RSpec.describe GovukFormsMarkdown::Validator do
 
       it "returns all errors" do
         expect(validator.validate_tags).to eq([:unsupported_tags_used])
+      end
+    end
+  end
+
+  describe "#validate" do
+    let(:markdown) { "# Some markdown text" }
+
+    context "when validate methods return nil" do
+      before do
+        allow(validator).to receive(:validate_length).and_return(nil)
+        allow(validator).to receive(:validate_tags).and_return(nil)
+      end
+
+      it "removes any nil in the error array" do
+        expect(validator.validate).to eq({ errors: [] })
+      end
+    end
+
+    context "when validate methods return arrays" do
+      before do
+        allow(validator).to receive(:validate_length).and_return(%i[one two])
+        allow(validator).to receive(:validate_tags).and_return(%i[three four])
+      end
+
+      it "flattens array values" do
+        expect(validator.validate).to eq({ errors: %i[one two three four] })
       end
     end
   end

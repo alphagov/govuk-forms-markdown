@@ -13,6 +13,10 @@ module GovukFormsMarkdown
       @markdown = markdown
     end
 
+    def validate
+      { errors: [validate_length, validate_tags].compact.flatten }
+    end
+
     def validate_length
       markdown_without_syntax = Redcarpet::Markdown.new(Redcarpet::Render::StripDown).render(markdown).strip
 
