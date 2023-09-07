@@ -27,7 +27,7 @@ module GovukFormsMarkdown
       return nil if markdown.nil? || markdown.empty?
 
       renderer = GovukFormsMarkdown::Renderer.new({ link_attributes: { class: "govuk-link", rel: "noreferrer noopener", target: "_blank" } })
-      Redcarpet::Markdown.new(renderer, no_intra_emphasis: true).render(markdown)
+      Redcarpet::Markdown.new(renderer, no_intra_emphasis: true, disable_indented_code_blocks: true).render(markdown)
       renderer.errors if renderer.errors.any?
     end
   end
