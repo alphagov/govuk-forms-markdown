@@ -43,6 +43,11 @@ module GovukFormsMarkdown
       nil
     end
 
+    def codespan(code)
+      add_to_error(:used_codespan)
+      code
+    end
+
     def emphasis(text)
       add_to_error(:used_emphasis)
       text
