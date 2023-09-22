@@ -90,6 +90,10 @@ RSpec.describe GovukFormsMarkdown do
       expect(render("---")).to eq ""
     end
 
+    it "does not render code blocks" do
+      expect(render("    An indented code block")).to eq "<p class=\"govuk-body\">    An indented code block</p>"
+    end
+
     context "when unsafe content is used it should be escaped" do
       it "renders escaped H2s and GOV.UK classes" do
         expect(render("## <script>alert('Hacked');</script>")).to eq('<h2 class="govuk-heading-m">&lt;script&gt;alert(&#39;Hacked&#39;);&lt;/script&gt;</h2>')
