@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    govuk-forms-markdown (0.3.0)
+    govuk-forms-markdown (0.3.1)
       redcarpet (~> 3.6)
 
 GEM

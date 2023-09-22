@@ -2,6 +2,10 @@
 
 ## Released
 
+### [0.3.1] - 2023-09-22
+
+- Disallow indented code blocks [#15](https://github.com/alphagov/govuk-forms-markdown/pull/15)
+
 ### [0.3.0] - 2023-08-30
 
 - Add a Validator check if markdown is not too long or using unsupported markdown syntax [#13](https://github.com/alphagov/govuk-forms-markdown/pull/13)
