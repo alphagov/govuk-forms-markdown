@@ -2,6 +2,10 @@
 
 ## Released
 
+### [0.4.0] - 2023-12-24
+
+- Let users configure whether headings are allowed [#17](https://github.com/alphagov/govuk-forms-markdown/pull/17)
+
 ### [0.3.1] - 2023-09-22
 
 - Disallow indented code blocks [#15](https://github.com/alphagov/govuk-forms-markdown/pull/15)
