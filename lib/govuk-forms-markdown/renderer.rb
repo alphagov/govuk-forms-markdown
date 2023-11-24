@@ -6,8 +6,9 @@ module GovukFormsMarkdown
 
     attr_reader :errors
 
-    def initialize(options = {})
+    def initialize(options = {}, allow_headings: true)
       super options
+      @allow_headings = allow_headings
       @errors = []
     end
 
@@ -17,7 +18,10 @@ module GovukFormsMarkdown
                      when 3 then "s"
                      end
 
-      if heading_size.nil?
+      if @allow_headings == false
+        add_to_error(:headings_not_allowed)
+        paragraph(text)
+      elsif heading_size.nil?
         add_to_error(:heading_levels)
         paragraph(text)
       else
