@@ -2,7 +2,8 @@
 
 # rubocop:disable RSpec/FilePath
 RSpec.describe GovukFormsMarkdown::Validator do
-  let(:validator) { described_class.new(markdown) }
+  let(:validator) { described_class.new(markdown, allow_headings: allow_headings) }
+  let(:allow_headings) { true }
 
   describe "#validate_length" do
     context "when markdown is empty string" do
@@ -82,6 +83,15 @@ RSpec.describe GovukFormsMarkdown::Validator do
 
       it "returns all errors" do
         expect(validator.validate_tags).to eq([:unsupported_tags_used])
+      end
+
+      context "when headings are disallowed" do
+        let(:allow_headings) { false }
+        let(:markdown) { "## A level-2 heading" }
+
+        it "returns all errors" do
+          expect(validator.validate_tags).to eq([:unsupported_tags_used])
+        end
       end
     end
   end

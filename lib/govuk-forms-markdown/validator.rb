@@ -9,8 +9,9 @@ module GovukFormsMarkdown
   class Validator
     attr_accessor :markdown, :errors
 
-    def initialize(markdown = "")
+    def initialize(markdown = "", allow_headings: true)
       @markdown = markdown
+      @allow_headings = allow_headings
     end
 
     def validate
@@ -26,7 +27,7 @@ module GovukFormsMarkdown
     def validate_tags
       return nil if markdown.nil? || markdown.empty?
 
-      renderer = GovukFormsMarkdown::Renderer.new({ link_attributes: { class: "govuk-link", rel: "noreferrer noopener", target: "_blank" } })
+      renderer = GovukFormsMarkdown::Renderer.new({ link_attributes: { class: "govuk-link", rel: "noreferrer noopener", target: "_blank" } }, allow_headings: @allow_headings)
       Redcarpet::Markdown.new(renderer, no_intra_emphasis: true, disable_indented_code_blocks: true).render(markdown)
       renderer.errors if renderer.errors.any?
     end
