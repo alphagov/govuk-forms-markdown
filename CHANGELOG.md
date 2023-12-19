@@ -2,7 +2,11 @@
 
 ## Released
 
-### [0.4.0] - 2023-12-24
+### [0.5.0] - 2023-12-18
+
+- Add `(opens in new tab)` suffix to link text [#13](https://github.com/alphagov/govuk-forms-markdown/pull/18)
+
+### [0.4.0] - 2023-11-24
 
 - Let users configure whether headings are allowed [#17](https://github.com/alphagov/govuk-forms-markdown/pull/17)
 
