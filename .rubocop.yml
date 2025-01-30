@@ -19,4 +19,4 @@ inherit_mode:
 # **************************************************************
 
 AllCops:
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.4
