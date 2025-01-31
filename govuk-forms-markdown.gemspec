@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "This gem renders the limited subset of Markdown syntax supported by GOV.UK Forms."
   spec.homepage = "https://github.com/alphagov/govuk-forms-markdown"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.0.0"
+  spec.required_ruby_version = ">= 3.4.1"
 
   spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 

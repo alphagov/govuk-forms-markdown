@@ -2,7 +2,7 @@
 
 # rubocop:disable RSpec/FilePath
 RSpec.describe GovukFormsMarkdown::Validator do
-  let(:validator) { described_class.new(markdown, allow_headings: allow_headings) }
+  let(:validator) { described_class.new(markdown, allow_headings:) }
   let(:allow_headings) { true }
 
   describe "#validate_length" do

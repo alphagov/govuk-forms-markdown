@@ -2,7 +2,7 @@
 
 # rubocop:disable RSpec/FilePath
 RSpec.describe GovukFormsMarkdown::Renderer, "#header" do
-  subject(:renderer) { described_class.new(allow_headings: allow_headings) }
+  subject(:renderer) { described_class.new(allow_headings:) }
 
   let(:allow_headings) { true }
 
