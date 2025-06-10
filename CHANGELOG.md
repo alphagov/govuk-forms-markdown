@@ -2,6 +2,15 @@
 
 ## Released
 
+### [0.6.0] - 2025-06-10
+
+- Add .DS_Store files to .gitignore [#20](https://github.com/alphagov/govuk-forms-markdown/pull/20)
+- Create dependabot.yml [#24](https://github.com/alphagov/govuk-forms-markdown/pull/24)
+- Schedule dependabot updates every Sunday [#31](https://github.com/alphagov/govuk-forms-markdown/pull/31)
+- Normalize platforms in Bundler lockfile [#29](https://github.com/alphagov/govuk-forms-markdown/pull/29)
+- Bump supported minimum version of Ruby to 3.4.1 [#30](https://github.com/alphagov/govuk-forms-markdown/pull/30)
+- Dependency updates
+
 ### [0.5.0] - 2023-12-18
 
 - Add `(opens in new tab)` suffix to link text [#13](https://github.com/alphagov/govuk-forms-markdown/pull/18)
