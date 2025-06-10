@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe GovukFormsMarkdown::Renderer, "#codespan " do
+RSpec.describe GovukFormsMarkdown::Renderer, "#codespan" do
   subject(:renderer) { described_class.new }
 
   it "does not format codespan" do
