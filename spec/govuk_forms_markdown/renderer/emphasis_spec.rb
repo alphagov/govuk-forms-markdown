@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable RSpec/FilePath
 RSpec.describe GovukFormsMarkdown::Renderer, "#emphasis" do
   subject(:renderer) { described_class.new }
 
@@ -36,4 +35,3 @@ RSpec.describe GovukFormsMarkdown::Renderer, "#emphasis" do
     end
   end
 end
-# rubocop:enable RSpec/FilePath
