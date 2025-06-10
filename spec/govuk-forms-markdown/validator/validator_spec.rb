@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable RSpec/FilePath
 RSpec.describe GovukFormsMarkdown::Validator do
   let(:validator) { described_class.new(markdown, allow_headings:) }
   let(:allow_headings) { true }
@@ -101,8 +100,7 @@ RSpec.describe GovukFormsMarkdown::Validator do
 
     context "when validate methods return nil" do
       before do
-        allow(validator).to receive(:validate_length).and_return(nil)
-        allow(validator).to receive(:validate_tags).and_return(nil)
+        allow(validator).to receive_messages(validate_length: nil, validate_tags: nil)
       end
 
       it "removes any nil in the error array" do
@@ -112,8 +110,7 @@ RSpec.describe GovukFormsMarkdown::Validator do
 
     context "when validate methods return arrays" do
       before do
-        allow(validator).to receive(:validate_length).and_return(%i[one two])
-        allow(validator).to receive(:validate_tags).and_return(%i[three four])
+        allow(validator).to receive_messages(validate_length: %i[one two], validate_tags: %i[three four])
       end
 
       it "flattens array values" do
@@ -122,4 +119,3 @@ RSpec.describe GovukFormsMarkdown::Validator do
     end
   end
 end
-# rubocop:enable RSpec/FilePath

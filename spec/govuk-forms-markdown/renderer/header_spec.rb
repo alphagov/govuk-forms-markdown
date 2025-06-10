@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable RSpec/FilePath
 RSpec.describe GovukFormsMarkdown::Renderer, "#header" do
   subject(:renderer) { described_class.new(allow_headings:) }
 
@@ -76,4 +75,3 @@ RSpec.describe GovukFormsMarkdown::Renderer, "#header" do
     end
   end
 end
-# rubocop:enable RSpec/FilePath

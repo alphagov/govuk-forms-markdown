@@ -2,7 +2,7 @@
 
 RSpec.describe GovukFormsMarkdown do
   it "has a version number" do
-    expect(GovukFormsMarkdown::VERSION).not_to be nil
+    expect(GovukFormsMarkdown::VERSION).not_to be_nil
   end
 
   describe ".render" do
