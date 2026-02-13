@@ -1,6 +1,9 @@
 ## [Unreleased]
 
 ## Released
+### [0.7.0] - 2026-02-13
+- Add lockfile checksums [#45](https://github.com/alphagov/govuk-forms-markdown/pull/45)
+- Dependency updates
 
 ### [0.6.0] - 2025-06-10
 
