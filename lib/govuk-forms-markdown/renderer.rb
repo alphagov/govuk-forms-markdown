@@ -6,9 +6,10 @@ module GovukFormsMarkdown
 
     attr_reader :errors
 
-    def initialize(options = {}, allow_headings: true)
+    def initialize(options = {}, allow_headings: true, locale: "en")
       super options
       @allow_headings = allow_headings
+      @locale = locale
       @errors = []
     end
 
