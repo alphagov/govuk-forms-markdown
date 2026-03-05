@@ -1,7 +1,14 @@
 ## [Unreleased]
 
 ## Released
+
+### [0.8.0] - 2026-03-05
+
+- Make gem locale aware and add localised new tab text [#65](https://github.com/alphagov/govuk-forms-markdown/pull/65)
+- Dependency updates
+
 ### [0.7.0] - 2026-02-13
+
 - Add lockfile checksums [#45](https://github.com/alphagov/govuk-forms-markdown/pull/45)
 - Dependency updates
 
@@ -42,13 +49,11 @@
 
 - Initial release
 - Adds custom render methods for markdown syntax we would like to support.
-
   - Heading levels 2 & 3, anything else returns as unstyled text
   - Links styled like GOV.UK
   - Lists (ordered and unordered)
 
 - We do not support the following
-
   - Heading level 1
   - tables
   - horizontal rules
