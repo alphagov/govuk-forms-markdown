@@ -6,9 +6,10 @@ module GovukFormsMarkdown
 
     attr_reader :errors
 
-    def initialize(options = {}, allow_headings: true)
+    def initialize(options = {}, allow_headings: true, locale: "en")
       super options
       @allow_headings = allow_headings
+      @locale = locale
       @errors = []
     end
 
@@ -69,7 +70,7 @@ module GovukFormsMarkdown
 
     def link(link, title, content)
       title_attribute = title.nil? ? "" : " title=\"#{title}\""
-      %(<a href="#{link}" class="govuk-link"#{title_attribute} rel="noreferrer noopener" target="_blank">#{content} (opens in new tab)</a>)
+      %(<a href="#{link}" class="govuk-link"#{title_attribute} rel="noreferrer noopener" target="_blank">#{content} (#{new_tab_text})</a>)
     end
 
     def list(contents, list_type)
@@ -95,6 +96,12 @@ module GovukFormsMarkdown
     def add_to_error(error)
       symbolized_error = error.to_sym
       errors << symbolized_error unless errors.include?(symbolized_error)
+    end
+
+    def new_tab_text
+      return "agor mewn tab newydd" if @locale == "cy"
+
+      "opens in new tab" if @locale == "en"
     end
   end
 end

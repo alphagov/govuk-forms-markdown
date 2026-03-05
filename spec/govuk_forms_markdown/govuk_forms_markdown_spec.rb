@@ -137,6 +137,12 @@ RSpec.describe GovukFormsMarkdown do
         expect_equal_ignoring_ws(render(input), expected_html)
       end
     end
+
+    context "when configured with an unsupported locale" do
+      it "raises a GovukFormsMarkdown::Error" do
+        expect { described_class.render("## Top heading", locale: "fr") }.to raise_error(GovukFormsMarkdown::Error, "Unsupported locale \"fr\"")
+      end
+    end
   end
 
   describe ".validate" do
