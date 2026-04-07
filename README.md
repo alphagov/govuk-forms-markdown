@@ -29,7 +29,31 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+The `render` method will return HTML when provided with a markdown string.
+
+```ruby
+# Call the render method with the markdown you want to render
+GovukFormsMarkdown.render(markdown)
+
+# You can configure it to disallow headings
+GovukFormsMarkdown.render(markdown, allow_headings: false)
+
+# You can configure it if you're passing Welsh language markdown
+GovukFormsMarkdown.render(markdown, locale: "cy")
+```
+
+The `validate` method will return HTML when provided with a markdown string.
+
+```ruby
+# Call the validate method with the markdown you want to render
+GovukFormsMarkdown.validate(markdown)
+
+# You can configure it to disallow headings
+GovukFormsMarkdown.validate(markdown, allow_headings: false)
+
+# It will return a JSON object containing a list of errors:
+{ errors: [:too_long, :unsupported_tags_used] }
+```
 
 ## Development
 
