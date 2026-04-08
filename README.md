@@ -19,17 +19,41 @@ This gem exists largely to handle a GOV.UK Forms service use case and is unlikel
 
 TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
 
-Install the gem and add to the application's Gemfile by executing:
+Add the gem to your Gemfile:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```ruby
+gem "govuk-forms-markdown", require: "govuk_forms_markdown", github: "alphagov/govuk-forms-markdown", tag: "0.8.0" # Check the Github releases for the latest tag
+```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+Then run `bundle install`.
 
 ## Usage
 
-TODO: Write usage instructions here
+The `render` method will return HTML when provided with a markdown string.
+
+```ruby
+# Call the render method with the markdown you want to render
+GovukFormsMarkdown.render(markdown)
+
+# You can configure it to disallow headings
+GovukFormsMarkdown.render(markdown, allow_headings: false)
+
+# You can configure it if you're passing Welsh language markdown
+GovukFormsMarkdown.render(markdown, locale: "cy")
+```
+
+The `validate` method will return HTML when provided with a markdown string.
+
+```ruby
+# Call the validate method with the markdown you want to render
+GovukFormsMarkdown.validate(markdown)
+
+# You can configure it to disallow headings
+GovukFormsMarkdown.validate(markdown, allow_headings: false)
+
+# It will return a JSON object containing a list of errors:
+{ errors: [:too_long, :unsupported_tags_used] }
+```
 
 ## Development
 
